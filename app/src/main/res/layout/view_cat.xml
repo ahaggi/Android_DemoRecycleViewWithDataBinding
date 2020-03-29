@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout >
+    <data>
+        <variable
+            name="cat"
+            type="com.example.demorecycleviewwithdatabinding.model.Cat" />
+        <variable
+            name="activity"
+            type="com.example.demorecycleviewwithdatabinding.MainActivity" />
+    </data>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/catLinearLayout"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        >
+
+        <ImageView
+            android:id="@+id/catImageView"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            app:image_uri_adapter="@{cat.image}"
+            app:image_uri_error="@{@drawable/ic_launcher_background}"
+            app:image_uri_placeholder="@{@drawable/ic_launcher_background}"
+
+            />
+
+        <TextView
+
+            android:layout_margin="20dp"
+            android:id="@+id/catTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@{cat.id}" />
+
+    </LinearLayout>
+
+</layout>
